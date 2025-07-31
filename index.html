@@ -4,8 +4,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CodeFatGya.com — Emergency tech support for developers: Java, Spring Boot, APIs, CI/CD, and more. Available 24/7." />
+  <meta name="keywords" content="Java, Spring Boot, CI/CD, debugging, tech support, microservices, webhook, integration" />
+  <meta name="author" content="CodeFatGya Team" />
+  <meta property="og:title" content="CodeFatGya — Debug Rescue for Developers" />
+  <meta property="og:description" content="We fix urgent production bugs, API failures, and CI/CD issues — even at 2AM." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://codefatgya.com" />
   <title>CodeFatGya — Tech Emergency Squad</title>
+  <link rel="icon" type="image/png" href="favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -24,7 +33,7 @@
     header {
       background-color: #111827;
       color: white;
-      padding: 3rem 1rem;
+      padding: 2rem 1rem;
       text-align: center;
     }
 
@@ -44,15 +53,35 @@
     nav {
       background-color: #2563eb;
       padding: 1rem;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
-    nav a {
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .nav-links a {
       color: white;
-      margin: 0 0.5rem;
       text-decoration: none;
       font-weight: 500;
-      display: inline-block;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      background: white;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
     }
 
     .container {
@@ -126,22 +155,20 @@
       color: #6b7280;
     }
 
-    @media screen and (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
+    @media screen and (max-width: 768px) {
+      .hamburger {
+        display: flex;
       }
 
-      .hero h2 {
-        font-size: 1.5rem;
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
       }
 
-      .card {
-        padding: 1rem;
-      }
-
-      nav a {
-        margin: 0 0.3rem;
-        font-size: 0.95rem;
+      .nav-links.show {
+        display: flex;
       }
     }
   </style>
@@ -154,18 +181,25 @@
   </header>
 
   <nav>
-    <a href="#services">Services</a>
-    <a href="#issue">Submit Issue</a>
-    <a href="#contact">Contact</a>
+    <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#issue">Submit Issue</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 
   <div class="container">
-    <section class="hero">
+    <section class="hero" data-aos="fade-up">
       <h2>🔥 Developer SOS? We’ve Got Your Back</h2>
       <p>From broken deployments to failing callbacks and mystery errors — we help devs recover fast, so you can ship with confidence.</p>
     </section>
 
-    <section id="services">
+    <section id="services" data-aos="fade-up">
       <div class="card">
         <h3>💡 Services We Offer</h3>
         <ul>
@@ -179,7 +213,7 @@
       </div>
     </section>
 
-<section id="issue">
+    <section id="issue">  
       <div class="card">
         <h3>📋 Submit Your Issue</h3>
         <p>Describe the problem you're facing. We'll respond faster than your build fails.</p>
@@ -189,7 +223,7 @@
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" data-aos="fade-up">
       <div class="card">
         <h3>💬 Get in Touch</h3>
         <p>Need urgent support? Drop a WhatsApp message and we’ll respond in minutes.</p>
@@ -203,6 +237,11 @@
   <footer>
     &copy; 2025 CodeFatGya.com — Debugging as a Service. Powered by caffeine ☕ and code.
   </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>
