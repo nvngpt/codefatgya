@@ -29,14 +29,14 @@
     }
 
     header h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 800;
     }
 
     header p {
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       margin-top: 1rem;
-      max-width: 700px;
+      max-width: 90%;
       margin-left: auto;
       margin-right: auto;
     }
@@ -49,15 +49,16 @@
 
     nav a {
       color: white;
-      margin: 0 1rem;
+      margin: 0 0.5rem;
       text-decoration: none;
       font-weight: 500;
+      display: inline-block;
     }
 
     .container {
       max-width: 1100px;
       margin: 3rem auto;
-      padding: 0 1.5rem;
+      padding: 0 1rem;
     }
 
     section {
@@ -69,7 +70,7 @@
     }
 
     .hero h2 {
-      font-size: 2rem;
+      font-size: 1.8rem;
       color: #2563eb;
       margin-bottom: 1rem;
     }
@@ -77,23 +78,23 @@
     .card {
       background-color: #ffffff;
       border-radius: 12px;
-      padding: 2rem;
+      padding: 1.5rem;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
       margin-bottom: 2rem;
     }
 
     .card h3 {
       color: #1d4ed8;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       margin-bottom: 1rem;
     }
 
     .card ul {
-      padding-left: 1.5rem;
+      padding-left: 1.2rem;
     }
 
     .card ul li {
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
     }
 
     .cta {
@@ -104,12 +105,17 @@
     .cta a {
       background-color: #2563eb;
       color: white;
-      padding: 1rem 2rem;
+      padding: 0.8rem 1.5rem;
       border-radius: 8px;
       font-size: 1rem;
       text-decoration: none;
       font-weight: 600;
       display: inline-block;
+    }
+
+    iframe {
+      width: 100%;
+      border: none;
     }
 
     footer {
@@ -118,6 +124,25 @@
       text-align: center;
       font-size: 0.9rem;
       color: #6b7280;
+    }
+
+    @media screen and (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .hero h2 {
+        font-size: 1.5rem;
+      }
+
+      .card {
+        padding: 1rem;
+      }
+
+      nav a {
+        margin: 0 0.3rem;
+        font-size: 0.95rem;
+      }
     }
   </style>
 </head>
@@ -130,7 +155,7 @@
 
   <nav>
     <a href="#services">Services</a>
-    <a href="#form">Submit Issue</a>
+    <a href="#issue">Submit Issue</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -154,10 +179,7 @@
       </div>
     </section>
 
-  
-	
-	
-	<section id="contact">
+<section id="issue">
       <div class="card">
         <h3>📋 Submit Your Issue</h3>
         <p>Describe the problem you're facing. We'll respond faster than your build fails.</p>
