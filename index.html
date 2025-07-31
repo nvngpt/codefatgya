@@ -1,138 +1,186 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <title>CodeFatGya — Debugging as a Service</title> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"> <script src="https://unpkg.com/feather-icons"></script> 
-<style> 
-:root { --primary: #2563eb; --bg: #f0f4f8; --dark: #1f2937; --light: #9ca3af; }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
 
-html, body {
-  font-family: Inter;
-  background-color: var(--bg);
-  color: var(--dark);
-  height: 100%;
-  scroll-behavior: smooth;
-  text-align: justify;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeFatGya — Tech Emergency Squad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9fafb;
+      color: #1f2937;
+      line-height: 1.7;
+      text-align: justify;
+    }
 
-.container {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  text-align: center;
-}
+    header {
+      background-color: #111827;
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
 
-header h1 {
-  font-size: 2rem;
-  font-weight: 800;
-  background: linear-gradient(to right, #2563eb, #1d4ed8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+    header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+    }
 
-header p {
-  font-size: 1.25rem;
-  color: var(--light);
-  margin-top: 0.5rem;
-}
+    header p {
+      font-size: 1.25rem;
+      margin-top: 1rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-.card {
-  background: #ffffff;
-  padding: 2rem;
-  margin: 2rem 0;
-  border-radius: 1rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-  text-align: left;
-}
+    nav {
+      background-color: #2563eb;
+      padding: 1rem;
+      text-align: center;
+    }
 
-.card h2 {
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-.card h2 i {
-  margin-right: 0.5rem;
-  color: var(--primary);
-}
+    .container {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
 
-.card ul {
-  list-style: none;
-  padding-left: 0;
-}
+    section {
+      margin-bottom: 3rem;
+    }
 
-.card ul li {
-  margin: 0.5rem 0;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-}
+    .hero {
+      text-align: center;
+    }
 
-.card ul li::before {
-  content: '✔';
-  color: var(--primary);
-  margin-right: 0.5rem;
-}
+    .hero h2 {
+      font-size: 2rem;
+      color: #2563eb;
+      margin-bottom: 1rem;
+    }
 
-.cta {
-  margin-top: 1rem;
-  display: inline-block;
-  background: var(--primary);
-  color: #fff;
-  padding: 1rem 2rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.3s;
-}
+    .card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      margin-bottom: 2rem;
+    }
 
-.cta:hover {
-  background: #1d4ed8;
-}
+    .card h3 {
+      color: #1d4ed8;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
 
-footer {
-  margin-top: 3rem;
-  font-size: 0.875rem;
-  color: var(--light);
-  text-align: center;
-}
+    .card ul {
+      padding-left: 1.5rem;
+    }
 
-Your one-stop solution for urgent debugging & API fixes
-</style> </head> <body> <div class="container"> <header> <h1>CodeFatGaya?</h1> <p>💼 Your go-to expert for urgent tech issues — debugging, consulting & integrations, 24×7.</p> </header>
+    .card ul li {
+      margin-bottom: 0.75rem;
+    }
 
+    .cta {
+      text-align: center;
+      margin-top: 2rem;
+    }
 
-<div class="card">
-  <h2><i data-feather="alert-triangle"></i>🔥 Stuck in production?</h2>
-  <p>Don't panic. We handle emergency bugs, failed deployments, and integration nightmares while you sip coffee (or sleep).</p>
-</div>
+    .cta a {
+      background-color: #2563eb;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+    }
 
-<div class="card">
-  <h2><i data-feather="tool"></i>💡 Services we offer</h2>
-  <ul>
-    <li>Java & Spring Boot Debugging</li>
-    <li>Microservices Architecture Troubleshooting</li>
-    <li>Jenkins & CI/CD Pipeline Fixes</li>
-    <li>PL/SQL & DB Performance Debugging</li>
-    <li>Webhook & API Callback Integration</li>
-    <li>SSO / OAuth / Token Flow Issues</li>
-    <li>System Design Consulting</li>
-  </ul>
-</div>
+    footer {
+      background-color: #f3f4f6;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+  </style>
+</head>
 
-<div class="card" style="text-align: center;">
-  <p><strong>Need help instantly?</strong></p><br>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLScIMnnKuhBx-Gwz6lCo0_ek2H1PhM8wLFX34G2D3dEOojpssQ/viewform?embedded=true" target="_blank" class="btn"><p><strong>Submit an Inquiry</strong></p></a>
+<body>
+  <header>
+    <h1>CodeFatGya.com</h1>
+    <p>We debug production bugs, broken APIs, and dev disasters — even at 2AM.</p>
+  </header>
+
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#form">Submit Issue</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+    <section class="hero">
+      <h2>🔥 Developer SOS? We’ve Got Your Back</h2>
+      <p>From broken deployments to failing callbacks and mystery errors — we help devs recover fast, so you can ship with confidence.</p>
+    </section>
+
+    <section id="services">
+      <div class="card">
+        <h3>💡 Services We Offer</h3>
+        <ul>
+          <li>Java & Spring Boot Debugging</li>
+          <li>CI/CD Pipeline Fixes (Jenkins/GitHub Actions)</li>
+          <li>PL/SQL & Database Issue Resolution</li>
+          <li>API Integration (REST, Webhooks, Callbacks)</li>
+          <li>SSO & OAuth Setup / Troubleshooting</li>
+          <li>System Design Consultations</li>
+        </ul>
+      </div>
+    </section>
+
   
-  
-</div>
+	
+	
+	<section id="contact">
+      <div class="card">
+        <h3>📋 Submit Your Issue</h3>
+        <p>Describe the problem you're facing. We'll respond faster than your build fails.</p>
+        <div class="cta">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScIMnnKuhBx-Gwz6lCo0_ek2H1PhM8wLFX34G2D3dEOojpssQ/viewform?embedded=true" target="_blank" class="btn"><p><strong>Submit an Inquiry</strong></p></a>
+        </div>
+      </div>
+    </section>
 
+    <section id="contact">
+      <div class="card">
+        <h3>💬 Get in Touch</h3>
+        <p>Need urgent support? Drop a WhatsApp message and we’ll respond in minutes.</p>
+        <div class="cta">
+          <a href="https://wa.me/91XXXXXXXXXX" target="_blank">Chat on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </div>
 
+  <footer>
+    &copy; 2025 CodeFatGya.com — Debugging as a Service. Powered by caffeine ☕ and code.
+  </footer>
+</body>
 
-
-
-<footer>
-  © 2025 CodeFatGya — Built with jugad & coffee ☕
-</footer>
+</html>
