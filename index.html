@@ -53,10 +53,15 @@
     nav {
       background-color: #2563eb;
       padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 0.5rem;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-block;
     }
 
     .nav-links {
@@ -181,16 +186,9 @@
   </header>
 
   <nav>
-    <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('show')">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <div class="nav-links">
       <a href="#services">Services</a>
       <a href="#issue">Submit Issue</a>
       <a href="#contact">Contact</a>
-    </div>
   </nav>
 
   <div class="container">
